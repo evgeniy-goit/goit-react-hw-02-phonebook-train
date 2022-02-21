@@ -1,23 +1,21 @@
 import { Component } from "react";
+import Form from "./components/Form/form";
 
 class App extends Component {
   state = {
     contacts: [],
-    name: "",
-    number: "",
+  };
+
+  formSubmitHendler = (data) => {
+    console.log(data);
   };
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-      </form>
+      <div>
+        Phonebook
+        <Form onSubmit={this.formSubmitHendler} />
+      </div>
     );
   }
 }
